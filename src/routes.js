@@ -22,7 +22,11 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   .state('categories', {
     url: '/categories',
     templateUrl: 'src/menuapp/templates/categories.template.html',
-    controller: '$ctrl'
+    // resolve: {
+    //   items: ['MenuDataService', function (MenuDataService) {
+    //     return MenuDataService.getItems();
+    //   }]
+    // }
   });
 }
 
