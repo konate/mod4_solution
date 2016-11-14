@@ -1,16 +1,18 @@
 (function () {
 'use strict';
-
-function CategoriesController(){
-
-}
 angular.module('data')
-.component('categories', {
-  // templateUrl: 'src/menuapp/templates/categories.template.html',
-  templateUrl: 'src/menuapp/templates/categories.template.html',
-  // controller: CategoriesController,
-  bindings: {
-    items: '<'
+.component('categories',{
+
+  transclude: true,
+  templateUrl: 'src/menuapp/templates/categories-list.template.html',
+  controller: function(MenuDataService) {
+    var vm = this;
+    // Called when component is ready, see below
+    vm.$onInit = function() {
+     MenuDataService.getAllCategories().then(function(data){
+          vm.items = data;
+      });
+    };
   }
 });
 

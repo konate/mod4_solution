@@ -11,23 +11,21 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 
   // *** Set up UI states ***
-  $stateProvider
-  // Home page
-  .state('home', {
-    url: '/',
-    templateUrl: 'src/menuapp/templates/home.template.html'
-  })
+    $stateProvider
+      // Home page
+      .state('home', {
+        url: '/',
+        templateUrl: 'src/menuapp/templates/home.template.html'
+      })
 
-  // Premade list page
-  .state('categories', {
-    url: '/categories',
-    templateUrl: 'src/menuapp/templates/categories.template.html',
-    // resolve: {
-    //   items: ['MenuDataService', function (MenuDataService) {
-    //     return MenuDataService.getItems();
-    //   }]
-    // }
-  });
-}
+      .state('categories', {
+        url: '/categories',
+        templateUrl: 'src/menuapp/templates/categories.template.html'
+    })
+    .state('items', {
+    url: '/categories/{category_name}/{category_shortName}',
+      templateUrl: 'src/menuapp/templates/items.template.html'
+    });
+  }
 
 })();

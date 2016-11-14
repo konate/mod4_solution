@@ -1,0 +1,15 @@
+
+<div>
+<h1>All our Menu Categories</h1>
+<ul>
+  <li ng-repeat="item in $ctrl.items"
+  ui-sref="items({category_name: item.name, category_shortName: item.short_name})">>
+     {{ item.name}} <br />
+  </li>
+</ul>
+<ul>
+</div>
+<!-- <div>
+  <span>Name: {{$ctrl.hero.name}}</span>
+</div>
+</div>
