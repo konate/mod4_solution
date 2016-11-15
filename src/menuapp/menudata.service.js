@@ -38,7 +38,8 @@
       });
     };
     function resultFilter (item){
-      return item.short_name.toLowerCase().includes(service.categoryShortName.toLowerCase());
+      return item.short_name
+        .toLowerCase().indexOf(service.categoryShortName.toLowerCase())>= 0;
     }
 
     return service;
