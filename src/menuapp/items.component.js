@@ -13,7 +13,7 @@ bindings:{
     vm.$onInit = function() {
        MenuDataService.getItemsForCategory($stateParams.category_shortName)
      .then(function(data){
-        vm.menuName = $stateParams.category_name;
+       vm.menuName = $stateParams.category_name;
        vm.categoryItems = data;
       });
     };

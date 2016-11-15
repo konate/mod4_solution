@@ -23,7 +23,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
         templateUrl: 'src/menuapp/templates/categories.template.html'
     })
     .state('items', {
-    url: '/categories/{category_name}/{category_shortName}',
+    url: '/categories/{category_shortName}:{category_name}',
       templateUrl: 'src/menuapp/templates/items.template.html'
     });
   }
